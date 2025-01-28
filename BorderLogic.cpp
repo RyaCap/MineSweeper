@@ -1,5 +1,6 @@
 #include "BorderLogic.h"
 
+//Calculates the mines for the spots that are not connected to the border
 int NonBorderSpots(const std::string MINED_SQUARE, std::vector<std::vector<std::string>> GameBoard, int coordinateX, int coordinateY, int mineCount) {
     for (int i = coordinateX - 1; i <= coordinateX + 1; i++) {
         for (int j = coordinateY - 1; j <= coordinateY + 1; j++) {
@@ -11,6 +12,7 @@ int NonBorderSpots(const std::string MINED_SQUARE, std::vector<std::vector<std::
     return mineCount;
 }
 
+//Calculates the mines for the spots that are connected to one border
 int SingleBorderSpots(const std::string MINED_SQUARE, std::vector<std::vector<std::string>> GameBoard, int coordinateX, int coordinateY, int mineCount, char border) {
     if ((border != 'l' && border != 'r') && (border != 't' && border != 'b')) {
         system("cls");
@@ -35,7 +37,7 @@ int SingleBorderSpots(const std::string MINED_SQUARE, std::vector<std::vector<st
                 }
             }
         }
-    } //Y is 0
+    }
     else if (border == 't') {
         for (int i = coordinateX - 1; i <= coordinateX + 1; i++) {
             for (int j = coordinateY; j <= coordinateY + 1; j++) {
@@ -44,7 +46,7 @@ int SingleBorderSpots(const std::string MINED_SQUARE, std::vector<std::vector<st
                 }
             }
         }
-    } //Y is at the bottom of GameBoard
+    }
     else if (border == 'b') {
         for (int i = coordinateX - 1; i <= coordinateX + 1; i++) {
             for (int j = coordinateY - 1; j <= coordinateY; j++) {
@@ -58,6 +60,7 @@ int SingleBorderSpots(const std::string MINED_SQUARE, std::vector<std::vector<st
     return mineCount;
 }
 
+//Calculates the mines for the spots that are connected to two borders
 int DoubleBorderSpots(const std::string MINED_SQUARE, std::vector<std::vector<std::string>> GameBoard, int coordinateX, int coordinateY, int mineCount, char xBorder, char yBorder) {
     if ((xBorder != 'l' && xBorder != 'r') || (yBorder != 'b' && yBorder != 't')) {
         system("cls");

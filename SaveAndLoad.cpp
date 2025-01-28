@@ -1,5 +1,11 @@
 #include "SaveAndLoad.h"
 
+/*.CSV SAVE FILE GOES LIKE THIS :
+EXAMPLE:
+    size,flattenedplayergameboard,flattenedAnswerGameBoard,errorsallowed,minesExploded
+    6,nnnFnn2n,eeememmee,0,0
+*/
+
 bool SaveGame(int boardSize, std::vector<std::vector<std::string>> PlayerGameBoard, std::vector<std::vector<std::string>> AnswerGameBoard, int loseCondition, int minesExploded) {
     std::ofstream MyFile;
     MyFile.open(SAVE_FILE_NAME);

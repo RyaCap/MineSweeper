@@ -22,7 +22,7 @@ int main()
 
 LoadFailed:
     std::cout << "********************MineSweeper********************\n";
-    int menuInput = UserInput(StartMenu, MIN_MENU_OPTION, START_MENU_OPTIONS);
+    int menuInput = UserInput(BoardSelectionMenu, MIN_MENU_OPTION, START_MENU_OPTIONS);
 
     switch (menuInput) {
     case 1:
@@ -66,7 +66,7 @@ LoadSuccessful:
     while (minesExploded <= loseCondition) {
         std::cout << "Player GameBoard:\n";
         DisplayGameBoard(PlayerGameBoard);
-        std::cout<<"\n";
+        std::cout<<"\n\n";
 
         menuSelection = UserInput(ActionMenu, MIN_MENU_OPTION, MENU_ACTION_COUNT);
         system("cls");

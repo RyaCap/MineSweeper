@@ -1,8 +1,5 @@
 #include "GameBoard.h"
 
-
-/// <summary>Display's the desired game</summary>
-/// <param name="GameBoard">Inputs the desired game board (must be a char vector) </param>
 void DisplayGameBoard(std::vector<std::vector<std::string>> GameBoard) {
     for (int i = 0; i < GameBoard.size(); i++) {
         for (int j = 0; j < GameBoard[0].size(); j++) {
@@ -13,16 +10,11 @@ void DisplayGameBoard(std::vector<std::vector<std::string>> GameBoard) {
     std::cout << '\n';
 }
 
-/// <summary>
-/// Randomly inserts the proper count of mines into the designated game board
-/// </summary>
-/// <param name="GameBoard">The Game board that will have mines inserted into it (should be the answer game board)</param>
-/// <returns>Returns the mined game board</returns>
 std::vector<std::vector<std::string>> InsertMines(std::vector<std::vector<std::string>> GameBoard) {
     int numberOfMines = 1, rateOfMines = 0;
     if ((GameBoard.size() != BASIC_DIFFICULTY) && (GameBoard.size() != INTERMEDIATE_DIFFICULTY) && (GameBoard.size() != ADVANCED_DIFFICULTY)) {
         system("cls");
-        std::cerr << "Error inserting mines. Exiting the game.\n";
+        std::cerr << "Error insterting mines. Exiting the game.\n";
         exit(1);
     }
 
@@ -106,6 +98,7 @@ std::vector<std::vector<std::string>> ClearSquare(std::vector<std::vector<std::s
 
         if (GameBoard[coordinateY][coordinateX] == NOT_MINED) {
             if (AnswerGameBoard[coordinateY][coordinateX] == MINED_SQUARE) {
+                AnswerGameBoard[coordinateY][coordinateX] = EXPLODED_BOMB;
                 system("cls");
                 std::cout << "BOOM! You found a mine and it exploded.\n";
                 spotWasMine = true;

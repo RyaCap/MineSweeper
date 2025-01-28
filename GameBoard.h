@@ -18,13 +18,14 @@ const std::string ANSI_RED = "\033[31m";
 const std::string ANSI_ORANGE = "\033[33m";
 const std::string ANSI_GREEN = "\x1B[32m";
 const std::string ANSI_BLUE = "\x1B[94m";
-const std::string ANSI_WHITE = "\033[0m";
+const std::string ANSI_WHITE = "\033[0m"; //White
 
 //GameBoard Pieces
 const std::string NOT_MINED = "n";
 const std::string FLAG = ANSI_BLUE + "F" + ANSI_WHITE;
 const std::string MINED_SQUARE = "m";
 const std::string EMPTY_SQUARE = "e";
+const std::string EXPLODED_BOMB = "B";
 
 void DisplayGameBoard(std::vector<std::vector<std::string>> GameBoard);
 std::vector<std::vector<std::string>> InsertMines(std::vector<std::vector<std::string>> GameBoard);
