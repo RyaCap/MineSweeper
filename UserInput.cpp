@@ -1,10 +1,5 @@
 #include "UserInput.h"
-/// <summary>
-/// Gets the user input and ensures that it is an integer value
-/// </summary>
-/// <param name="Menu">Displays the function menu to select from. The function must be void</param>
-/// <param name="optionCount">The count of the max options in the selection</param>
-/// <returns>Returns the integer value from the user's selection. The selection is from the desired menu</returns>
+
 int UserInput(void (*Menu)(), int minOption, int optionCount) {
     std::string userInput;
     int verifiedInput = 0;

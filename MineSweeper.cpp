@@ -66,7 +66,6 @@ LoadSuccessful:
     while (minesExploded <= loseCondition) {
         std::cout << "Player GameBoard:\n";
         DisplayGameBoard(PlayerGameBoard);
-        DisplayGameBoard(AnswerGameBoard);
         std::cout<<"\n\n";
 
         menuSelection = UserInput(ActionMenu, MIN_MENU_OPTION, MENU_ACTION_COUNT);

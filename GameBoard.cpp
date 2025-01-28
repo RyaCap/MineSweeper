@@ -22,7 +22,7 @@ std::vector<std::vector<std::string>> InsertMines(std::vector<std::vector<std::s
     int numberOfMines = 1, rateOfMines = 0;
     if ((GameBoard.size() != BASIC_DIFFICULTY) && (GameBoard.size() != INTERMEDIATE_DIFFICULTY) && (GameBoard.size() != ADVANCED_DIFFICULTY)) {
         system("cls");
-        std::cerr << "Error insterting mines. Exiting the game.\n";
+        std::cerr << "Error inserting mines. Exiting the game.\n";
         exit(1);
     }
 
