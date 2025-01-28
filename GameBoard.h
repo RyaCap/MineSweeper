@@ -18,7 +18,7 @@ const std::string ANSI_RED = "\033[31m";
 const std::string ANSI_ORANGE = "\033[33m";
 const std::string ANSI_GREEN = "\x1B[32m";
 const std::string ANSI_BLUE = "\x1B[94m";
-const std::string ANSI_WHITE = "\033[0m"; //White
+const std::string ANSI_WHITE = "\033[0m";
 
 //GameBoard Pieces
 const std::string NOT_MINED = "n";
